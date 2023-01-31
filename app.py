@@ -1,17 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 31 12:09:20 2023
 
-@author: vishn
-"""
 
 import pickle
 import streamlit as st
 import numpy as np
 import pandas as pd
-#from flask import jsonify
-import json
-import streamlit_option_menu
+
+
 
 
 #loding the saved model

@@ -43,7 +43,7 @@ st.title('A Chemical Potability Prediction For Drinking Water')
 
 ph =st.number_input("Enter PH Level",min_value=0,max_value=14)
 Hardness=st.number_input("Enter the  value of Hardness",min_value=45,max_value=400)
-Solids=st.number_input('Enter the value of Solids',min_value=300,max_value=6000)
+Solids=st.number_input('Enter the value of Solids',min_value=300,max_value=70000)
 Chloramines=st.number_input("Enter the value of Chloramines",min_value=0,max_value=14)
 Sulfate=st.number_input("Enter the value of Sulfate",min_value=120,max_value=500)
 Conductivity=st.number_input("Enter the value of Conductivity",min_value=160,max_value=800)

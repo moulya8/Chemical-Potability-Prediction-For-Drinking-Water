@@ -41,7 +41,7 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 #page title
 st.title('A Chemical Potability Prediction For Drinking Water')
 
-ph =st.number_input("Enter PH Level",min_value=0,max_value=14,format="%.2f")
+ph =st.number_input("Enter PH Level",min_value=0,max_value=14,format="%i")
 Hardness=st.number_input("Enter the  value of Hardness",min_value=45,max_value=400,format="%.2f")
 Solids=st.number_input('Enter the value of Solids',min_value=300,max_value=70000,format="%.2f")
 Chloramines=st.number_input("Enter the value of Chloramines",min_value=0,max_value=14,format="%.2f")

@@ -10,8 +10,8 @@ import pandas as pd
 
 #loding the saved model
 
-random_forest_model=pickle.load(open('C:\\Users\\vishn\\Downloads\\moulya\\random_forest_model.pickel','rb'))
-standar_scaler=pickle.load(open('C:\\Users\\vishn\\Downloads\\moulya\\standar_scaler.pickel','rb'))
+random_forest_model=pickle.load(open('random_forest_model.pickel','rb'))
+standar_scaler=pickle.load(open('standar_scaler.pickel','rb'))
 
 page_bg_img = f"""
 <style>

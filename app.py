@@ -10,7 +10,7 @@ import pandas as pd
 
 #loding the saved model
 
-random_forest_model=pickle.load(open('random_forest_model.pickel','rb'))
+random_forest_model=pickle.load(open('random_forest_models.pickel','rb'))
 standar_scaler=pickle.load(open('standar_scaler.pickel','rb'))
 
 page_bg_img = f"""
@@ -42,20 +42,21 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 st.title('A Chemical Potability Prediction For Drinking Water')
 
 ph =st.number_input("Enter PH Level",min_value=0,max_value=14,format="%f")
-Hardness=st.number_input("Enter the  value of Hardness",min_value=45,max_value=400,format="%f")
-Solids=st.number_input('Enter the value of Solids',min_value=300,max_value=70000,format="%f")
-Chloramines=st.number_input("Enter the value of Chloramines",min_value=0,max_value=14,format="%f")
-Sulfate=st.number_input("Enter the value of Sulfate",min_value=120,max_value=500,format="%f")
-Conductivity=st.number_input("Enter the value of Conductivity",min_value=160,max_value=800,format="%f")
-Trihalomethanes=st.number_input("Enter the value of Trihalomethanes",min_value=0,max_value=130,format="%f")
-Turbidity=st.number_input("Enter the value of Turbidity",min_value=1,max_value=7,format="%f")
+Hardness=st.number_input("Enter the  value of Hardness",min_value=45,max_value=400,format="%i")
+Solids=st.number_input('Enter the value of Solids',min_value=300,max_value=70000,format="%i")
+Chloramines=st.number_input("Enter the value of Chloramines",min_value=0,max_value=14,format="%i")
+Sulfate=st.number_input("Enter the value of Sulfate",min_value=120,max_value=500,format="%i")
+Conductivity=st.number_input("Enter the value of Conductivity",min_value=160,max_value=800,format="%i")
+Trihalomethanes=st.number_input("Enter the value of Trihalomethanes",min_value=0,max_value=130,format="%i")
+Turbidity=st.number_input("Enter the value of Turbidity",min_value=1,max_value=7,format="%i")
+Organic_carbon=st.number_input("Enter the value of Organic_carbon",min_value=1,max_value=30,format="%i")
 
-data=np.asarray([[ph,Hardness,Solids,Chloramines,Sulfate,Conductivity,Trihalomethanes,Turbidity]])
-sacler_data=standar_scaler.fit_transform(data)
+data=[[ph,Hardness,Solids,Chloramines,Sulfate,Conductivity,Organic_carbon,Trihalomethanes,Turbidity]]
+#sacler_data=standar_scaler.fit_transform(data)
     
 predicted=''   
 if st.button('Press Here to predict'):
-    prd=random_forest_model.predict(sacler_data) 
+    prd=random_forest_model.predict(data) 
     if prd==0:
        predicted="Your Water Is Not Protable"    
     else:
